@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thermo Fisher Interview Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f5f2; --panel:#fff; --side:#14161a; --side-ink:#c9ccd3; --side-hi:#fff;
+  --ink:#1c1d20; --muted:#60646e; --line:#e4e2dd; --accent:#c8102e; --accent-soft:#fbeaed;
+  --gold:#a86b00; --gold-soft:#fdf3e1; --good:#1f7a4d; --good-soft:#e7f4ec; --code:#f1efea;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111215; --panel:#1a1c20; --side:#0b0c0e; --ink:#ececee; --muted:#a3a7b1; --line:#2b2e34;
+  --accent:#ff5a6e; --accent-soft:#3a1c22; --gold:#f2b84b; --gold-soft:#33280f; --good:#62d39c; --good-soft:#15301f; --code:#23262b;}}
+:root[data-theme="dark"]{
+  --bg:#111215; --panel:#1a1c20; --side:#0b0c0e; --ink:#ececee; --muted:#a3a7b1; --line:#2b2e34;
+  --accent:#ff5a6e; --accent-soft:#3a1c22; --gold:#f2b84b; --gold-soft:#33280f; --good:#62d39c; --good-soft:#15301f; --code:#23262b;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+a{color:var(--accent)}
+.layout{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+aside{background:var(--side);color:var(--side-ink);position:sticky;top:0;height:100vh;overflow-y:auto;padding:24px 18px}
+aside .logo{color:var(--side-hi);font-family:Fraunces,serif;font-size:21px;line-height:1.15;margin-bottom:4px}
+aside .sub{font-size:12px;opacity:.7;margin-bottom:20px}
+aside .cd{background:rgba(255,255,255,.06);border-radius:10px;padding:10px 12px;margin-bottom:20px;font-size:13px}
+aside .cd b{display:block;color:var(--side-hi);font-size:18px}
+aside nav a{display:flex;gap:10px;align-items:center;color:var(--side-ink);text-decoration:none;font-size:14px;padding:7px 10px;border-radius:8px}
+aside nav a:hover,aside nav a.on{background:rgba(255,255,255,.08);color:var(--side-hi)}
+aside nav a span{font-size:11px;opacity:.55;width:18px}
+aside .theme{margin-top:18px;width:100%;background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--side-ink);border-radius:8px;padding:7px;font:inherit;font-size:13px;cursor:pointer}
+main{padding:36px 44px 90px;max-width:960px;width:100%;min-width:0}
+.mtop{display:none}
+section{padding-top:28px;margin-top:28px;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0;margin-top:0;padding-top:0}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:Fraunces,serif;font-size:clamp(32px,5vw,46px);line-height:1.08;margin:6px 0 10px}
+h2{font-family:Fraunces,serif;font-size:28px;margin:4px 0 6px}
+h3{font-size:16px;margin:22px 0 8px}
+.lead{color:var(--muted);margin:0 0 18px;max-width:680px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:12px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.grid .card{margin:0}
+.kpi b{display:block;font-size:26px;line-height:1.1}
+.kpi small{color:var(--muted);font-size:13px}
+.intel{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:14px 18px;margin:10px 0}
+.intel .h{font-weight:600}
+.intel .use{margin-top:8px;font-size:14px;background:var(--gold-soft);border-radius:8px;padding:8px 12px}
+.intel .use b{color:var(--gold)}
+.badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:var(--gold-soft);color:var(--gold);margin-right:6px}
+.say{border-left:3px solid var(--good);background:var(--good-soft);padding:12px 16px;border-radius:0 10px 10px 0;margin:12px 0}
+.say b{color:var(--good)}
+.warn{border-left:3px solid var(--accent);background:var(--accent-soft);padding:12px 16px;border-radius:0 10px 10px 0;margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.tw{overflow-x:auto}
+.formula{font-family:ui-monospace,Menlo,monospace;background:var(--code);padding:10px 14px;border-radius:8px;font-size:13.5px;overflow-x:auto;white-space:pre}
+.timeline{position:relative;margin:10px 0 0 8px;padding-left:22px;border-left:2px solid var(--line)}
+.timeline .st{position:relative;padding:4px 0 16px}
+.timeline .st::before{content:"";position:absolute;left:-29px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--panel);border:2px solid var(--accent)}
+.timeline .st.now::before{background:var(--accent)}
+.timeline .st b{display:block}
+.timeline .st span{color:var(--muted);font-size:14px}
+details{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:8px 0}
+details summary{padding:12px 16px;cursor:pointer;font-weight:600;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"+";display:inline-block;width:18px;color:var(--accent)}
+details[open] summary::before{content:"–"}
+details .body{padding:0 16px 14px 34px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 12px}
+.tabs button{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:99px;padding:6px 14px;font:inherit;font-size:14px;cursor:pointer}
+.tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:10px 0}
+.q .qt{font-weight:600}
+.q .src{font-size:12px;color:var(--gold);font-weight:600}
+.q .meta{font-size:14px;color:var(--muted);margin:4px 0 10px}
+.q textarea{width:100%;min-height:70px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:14px/1.5 Inter,sans-serif;padding:8px 10px;resize:vertical}
+.flash{perspective:1200px;max-width:560px;margin:0 auto}
+.fc{position:relative;height:210px;cursor:pointer;transition:transform .5s;transform-style:preserve-3d}
+.fc.flip{transform:rotateY(180deg)}
+.fc .face{position:absolute;inset:0;backface-visibility:hidden;background:var(--panel);border:1px solid var(--line);border-radius:16px;display:grid;place-items:center;padding:22px;text-align:center}
+.fc .back{transform:rotateY(180deg);font-size:15px;color:var(--ink)}
+.fc .front{font-size:19px;font-weight:600}
+.btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:9px;padding:8px 14px;font:inherit;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.drill{text-align:center}
+.drill .prompt{font-size:20px;font-weight:600;min-height:56px;margin:4px 0 12px}
+.drill .timer{font-size:42px;font-weight:700;font-variant-numeric:tabular-nums}
+.drill .timer.over{color:var(--accent)}
+.check{display:flex;gap:10px;align-items:flex-start;margin:6px 0}
+.check input{margin-top:5px;accent-color:var(--accent)}
+.check input:checked+span{text-decoration:line-through;color:var(--muted)}
+.day{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.day:last-child{border-bottom:0}
+.day .when b{display:block;font-size:18px}
+.day .when span{font-size:13px;color:var(--muted)}
+.blk .t{font-size:13px;font-weight:600;color:var(--accent);margin-top:6px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:10px 0 10px 44px;border-bottom:1px solid var(--line)}
+.steps li:last-child{border-bottom:0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:grid;place-items:center;font-size:14px}
+.sources{font-size:13px;color:var(--muted)}
+.sources li{margin:3px 0}
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr}
+  aside{display:none}
+  .mtop{display:flex;max-width:100vw;margin:-24px -16px 16px;position:sticky;top:0;z-index:5;background:var(--side);padding:10px 16px;gap:6px;overflow-x:auto}
+  .mtop a{color:#d6d8de;text-decoration:none;font-size:13px;white-space:nowrap;padding:5px 9px;border-radius:7px;background:rgba(255,255,255,.07)}
+  main{padding:24px 16px 80px}
+  .day{grid-template-columns:1fr;gap:4px}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside>
+  <div class="logo">Thermo Fisher<br>Interview Brief</div>
+  <div class="sub">2027 FLDP Finance Intern · R-01361452</div>
+  <div class="cd">Recruiter screen in<b id="cd">—</b>Mon Nov 9 · 9:15 AM ET</div>
+  <nav id="nav">
+    <a href="#brief"><span>00</span>Cheat sheet</a>
+    <a href="#intel"><span>01</span>Insider intel</a>
+    <a href="#company"><span>02</span>Company basics</a>
+    <a href="#process"><span>03</span>Interview process</a>
+    <a href="#program"><span>04</span>The FLDP</a>
+    <a href="#people"><span>05</span>Recruiter &amp; leaders</a>
+    <a href="#fpa"><span>06</span>FP&amp;A</a>
+    <a href="#questions"><span>07</span>Question bank</a>
+    <a href="#ask"><span>08</span>Questions to ask</a>
+    <a href="#practice"><span>09</span>Flashcards &amp; drill</a>
+    <a href="#memorize"><span>10</span>Memorizing</a>
+    <a href="#plan"><span>11</span>Weekend plan</a>
+  </nav>
+  <button class="theme" id="themeBtn">Light / Dark</button>
+</aside>
+
+<main>
+<div class="mtop">
+  <a href="#brief">Cheat sheet</a><a href="#intel">Intel</a><a href="#company">Company</a><a href="#process">Process</a><a href="#program">FLDP</a><a href="#people">People</a><a href="#fpa">FP&amp;A</a><a href="#questions">Questions</a><a href="#ask">Ask</a><a href="#practice">Drill</a><a href="#memorize">Memorize</a><a href="#plan">Plan</a>
+</div>
+
+<!-- CHEAT SHEET -->
+<section id="brief">
+  <div class="eyebrow">One-page cheat sheet</div>
+  <h1>Walk in knowing more than the other candidates.</h1>
+  <p class="lead">If you only read one thing before the call, read this box. Everything below backs it up.</p>
+  <div class="grid">
+    <div class="card kpi"><b>$47.7–48.2B</b><small>2026 revenue guidance, raised in October</small></div>
+    <div class="card kpi"><b>+9% / +6%</b><small>Q3 2026 revenue growth / organic growth</small></div>
+    <div class="card kpi"><b>24.5%</b><small>Q3 adjusted operating margin (+120 bps)</small></div>
+    <div class="card kpi"><b>$8.875B</b><small>Clario acquisition, closed Mar 2026</small></div>
+  </div>
+  <div class="card">
+    <table>
+      <tr><th style="width:34%">If asked…</th><th>Your anchor</th></tr>
+      <tr><td>What does Thermo Fisher do?</td><td>"The world leader in serving science." Tools, consumables and services behind research, drug development, diagnostics; four segments; mission: healthier, cleaner, safer.</td></tr>
+      <tr><td>Why Thermo Fisher?</td><td>Mission + scale + finance that shapes decisions. PPI discipline. FLDP sponsored by the CFO.</td></tr>
+      <tr><td>Something recent?</td><td>Q3 beat and raised guidance; Clario closed; microbiology divested; OpenAI collaboration.</td></tr>
+      <tr><td>Which rotation?</td><td>FP&amp;A or Finance Data &amp; Analytics; ties to your Applied Stats minor and R.</td></tr>
+      <tr><td>Relocate?</td><td>"Yes, I'm open to any site."</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- INTEL -->
+<section id="intel">
+  <div class="eyebrow">01 · What most candidates won't know</div>
+  <h2>Insider intel</h2>
+  <p class="lead">Facts pulled from SEC filings, earnings calls and past candidate reports. Each comes with a way to use it. Use one or two on the call; dropping all of them sounds rehearsed.</p>
+
+  <div class="intel"><div class="h"><span class="badge">Leadership</span>The CFO changed this year, and the CFO sponsors the FLDP.</div>
+    Stephen Williamson retired as CFO at the end of March 2026. His successor, <b>Jim Meyer</b>, is a 17-year Thermo Fisher veteran. The FLDP is run by a dedicated program manager with oversight from the CFO and the Finance Leadership Team.
+    <div class="use"><b>Use it:</b> "I read that the program has CFO-level oversight, and with Jim Meyer coming up through the company over 17 years, it seems like Thermo Fisher really does develop finance leaders from within."</div></div>
+
+  <div class="intel"><div class="h"><span class="badge">M&amp;A</span>Clario is the biggest deal in years and lands in the segment most interns support.</div>
+    Thermo Fisher closed its acquisition of Clario (clinical-trial endpoint data) in March 2026 for $8.875B in cash, plus $125M due in January 2027 and up to $400M in earn-outs tied to 2026–2027 performance. It joined Laboratory Products &amp; Biopharma Services, the largest and fastest-growing segment.
+    <div class="use"><b>Use it as a question:</b> "With Clario joining Lab Products and Biopharma Services, are any intern projects tied to integration work?" Earn-outs and integration tracking are real finance work.</div></div>
+
+  <div class="intel"><div class="h"><span class="badge">Guidance</span>They raised full-year guidance in October.</div>
+    After Q3, 2026 guidance went to <b>$47.7–48.2B revenue</b> (7–8% growth) and <b>$25.13–25.43 adjusted EPS</b> (10–11% growth), with organic growth raised to about 4%. The January starting point was $46.3–47.2B and $24.22–24.80.
+    <div class="use"><b>Use it:</b> Knowing the company raised guidance mid-year is exactly what an FP&amp;A person tracks. Good for "Why finance here?"</div></div>
+
+  <div class="intel"><div class="h"><span class="badge">Margins</span>Part of Q3's margin gain came from tariff refunds.</div>
+    The 10-Q says Q3 margin expansion came mainly from productivity gains, <i>including tariff refunds realized</i>, partly offset by strategic investments. In 2025, tariffs and related FX cost more than 100 bps of adjusted operating margin.
+    <div class="use"><b>Use it:</b> A strong example of variance analysis: separating one-time items (refunds) from repeatable productivity. Mention only if the conversation turns to finance.</div></div>
+
+  <div class="intel"><div class="h"><span class="badge">Portfolio</span>They're buying and selling at the same time.</div>
+    2025 capital deployment was about $16.5B, including about $13B on M&amp;A (Solventum's filtration and separation business, a Sanofi sterile fill-finish site in New Jersey) and $3.6B returned to shareholders. In Q3 2026 they sold the microbiology business. Through nine months of 2026 they also bought back $4.0B of stock.
+    <div class="use"><b>Use it:</b> Shows Corporate Development is an active rotation, a natural reason to ask about it.</div></div>
+
+  <div class="intel"><div class="h"><span class="badge">Weak spots</span>Know the headwinds; don't lead with them.</div>
+    Academic and government revenue declined in 2025 (research-funding pressure), and China fell mid single digits organically. Specialty Diagnostics was the soft segment in Q3 2026. Total debt is about $41.4B after Clario.
+    <div class="use"><b>Use it carefully:</b> Only if asked about challenges: "Exposure to academic and government funding seems like a headwind, and it's impressive that biopharma and industrial demand offset it."</div></div>
+
+  <div class="intel"><div class="h"><span class="badge">Innovation</span>AI and precision medicine are the growth story.</div>
+    A strategic collaboration with <b>OpenAI</b> (announced around January 2026) to use AI across operations and products; <b>Precure</b> with Mayo Clinic, combining data from over a million patient samples with proteomics tools; an AI-Automation Innovation Center in South Korea.
+    <div class="use"><b>Use it:</b> Pairs well with your data background: "I'm interested in how finance teams use AI and analytics at a company investing this heavily in it."</div></div>
+
+  <div class="intel"><div class="h"><span class="badge">Program</span>How interns actually get FLDP offers.</div>
+    Past postings say interns present their project to their team at the end of the summer and are evaluated; those evaluated favorably are interviewed for the full-time FLDP. Final project assignments often aren't set until late spring. Older postings listed a preferred GPA of 3.5+.
+    <div class="use"><b>Use it as a question:</b> "I read that interns present a final project. What makes those presentations stand out?"</div></div>
+</section>
+
+<!-- COMPANY -->
+<section id="company">
+  <div class="eyebrow">02</div>
+  <h2>Company basics</h2>
+  <p class="lead">The facts every candidate should have; say them without notes.</p>
+  <div class="card">
+    <table>
+      <tr><th>Item</th><th>Fact</th></tr>
+      <tr><td>Tagline</td><td>"The world leader in serving science"; revenue over $45B</td></tr>
+      <tr><td>Mission</td><td>Enable customers to make the world healthier, cleaner and safer</td></tr>
+      <tr><td>Values</td><td>The 4i's: Integrity, Intensity, Innovation, Involvement</td></tr>
+      <tr><td>CEO</td><td>Marc N. Casper, chairman and CEO</td></tr>
+      <tr><td>CFO</td><td>Jim Meyer (since spring 2026)</td></tr>
+      <tr><td>HQ</td><td>Waltham, Massachusetts</td></tr>
+      <tr><td>Brands</td><td>Thermo Scientific, Applied Biosystems, Invitrogen, Fisher Scientific, Unity Lab Services, Patheon, PPD</td></tr>
+      <tr><td>Operating system</td><td>PPI Business System (Practical Process Improvement), credited for margin gains</td></tr>
+    </table>
+  </div>
+  <h3>The four segments (Q3 2026)</h3>
+  <div class="card tw">
+    <table>
+      <tr><th>Segment</th><th>What it does</th><th>Q3 revenue</th></tr>
+      <tr><td><b>Laboratory Products &amp; Biopharma Services</b></td><td>Lab supplies and the Fisher channel; outsourced clinical research (PPD, now Clario) and drug manufacturing</td><td>$6.86B, +15%</td></tr>
+      <tr><td><b>Life Sciences Solutions</b></td><td>Reagents, instruments, bioproduction for research and biologics</td><td>$2.72B, +5%</td></tr>
+      <tr><td><b>Analytical Instruments</b></td><td>Mass spectrometry (Orbitrap), electron microscopy, chromatography</td><td>$2.00B, +6%</td></tr>
+      <tr><td><b>Specialty Diagnostics</b></td><td>Clinical diagnostic tests and instruments</td><td>Down slightly; microbiology sold</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="eyebrow">03</div>
+  <h2>Interview process</h2>
+  <p class="lead">Pieced together from past candidate reports on Glassdoor (small sample) and the program's postings. Expect behavioral questions throughout.</p>
+  <div class="timeline">
+    <div class="st"><b>Application</b><span>Done ✓</span></div>
+    <div class="st now"><b>Recruiter screen: Mon Nov 9, 30 min, Teams</b><span>Interest, fit, flexibility, a few behavioral questions. This is your call.</span></div>
+    <div class="st"><b>Finance interview(s)</b><span>One 2022 candidate reported a Teams interview with two finance team members.</span></div>
+    <div class="st"><b>Possible superday / case</b><span>A past candidate described three 30-minute interviews plus a team case study presented to three finance professionals.</span></div>
+    <div class="st"><b>Offer</b><span>Glassdoor estimates about 30 days from start to offer; one candidate waited ~1.5 weeks after interviewing.</span></div>
+  </div>
+  <div class="say"><b>What reports agree on:</b> difficulty is rated "easy" and the experience positive, but the questions are almost all behavioral: leadership, handling something with no training, mentors, failure. Stories win this process.</div>
+</section>
+
+<!-- PROGRAM -->
+<section id="program">
+  <div class="eyebrow">04</div>
+  <h2>The FLDP and the internship</h2>
+  <div class="card tw">
+    <table>
+      <tr><th>Detail</th><th>2027 internship</th></tr>
+      <tr><td>Dates</td><td>Starts May 31, 2027; 10 weeks; in-office</td></tr>
+      <tr><td>Pay</td><td>$18.50–$28.75/hr; $5,000 relocation stipend if 50+ miles away</td></tr>
+      <tr><td>Placement</td><td>By business need. Sites in past postings: Waltham/Boston, Pittsburgh, Allentown &amp; Center Valley PA, Greenville &amp; Wilmington NC, Hillsboro OR, Carlsbad/San Diego CA</td></tr>
+      <tr><td>Projects</td><td>FP&amp;A, Internal Audit, Cost Accounting, Commercial Finance, Strategic Pricing, General Accounting, Division Finance, Corporate Development, Finance Data &amp; Analytics</td></tr>
+      <tr><td>Eligibility</td><td>Business-related degree finishing Dec 2027–Jun 2028; 1+ years related experience; leadership (athletics counts); no visa sponsorship</td></tr>
+      <tr><td>Full-time FLDP</td><td>Two years of six-month rotations, likely starting summer 2028 for your class; about $78–80K plus bonus, sign-on, relocation</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- PEOPLE -->
+<section id="people">
+  <div class="eyebrow">05</div>
+  <h2>Recruiter &amp; leaders</h2>
+  <div class="grid">
+    <div class="card"><h3 style="margin-top:0">Zack Brower, MBA</h3>
+      <p style="margin:0 0 8px">Sr. Talent Specialist, University Relations &amp; Recruiting.</p>
+      <ul style="margin:0;padding-left:18px">
+        <li>Runs campus recruiting; screens many students</li>
+        <li>MBA: comfortable with finance-career questions</li>
+        <li>No public profile could be confirmed online; several people share the name, so don't assume details</li>
+      </ul></div>
+    <div class="card"><h3 style="margin-top:0">LinkedIn check (5 min)</h3>
+      <ul style="margin:0;padding-left:18px">
+        <li>Search "Zack Brower Thermo Fisher" while signed in</li>
+        <li>Note: school, years at Thermo Fisher, prior roles</li>
+        <li>Look for FLDP or campus-event posts</li>
+        <li>Use one detail, lightly: "I saw your post about…"</li>
+      </ul></div>
+    <div class="card"><h3 style="margin-top:0">Names worth knowing</h3>
+      <ul style="margin:0;padding-left:18px">
+        <li><b>Marc Casper</b>: chairman and CEO</li>
+        <li><b>Jim Meyer</b>: CFO since spring 2026, 17 years at the company</li>
+        <li><b>Stephen Williamson</b>: CFO until March 2026</li>
+      </ul></div>
+  </div>
+  <div class="warn">Keep research professional. Mentioning someone's public work posts is fine; bringing up anything personal you found online comes across badly.</div>
+</section>
+
+<!-- FPA -->
+<section id="fpa">
+  <div class="eyebrow">06</div>
+  <h2>FP&amp;A brush-ups</h2>
+  <p class="lead">Unlikely to be tested Monday, but likely in later rounds. Explain each in two sentences.</p>
+  <details><summary>What does FP&amp;A do?</summary><div class="body">Builds the budget, updates forecasts during the year, explains variances between actual results and plan, and supports investment decisions. Accounting records what happened; FP&amp;A looks forward.</div></details>
+  <details><summary>How the three statements connect</summary><div class="body"><div class="formula">Income statement → net income
+Net income → top of cash flow statement → change in cash
+Ending cash + retained earnings → balance sheet (Assets = Liabilities + Equity)</div></div></details>
+  <details><summary>Variance analysis</summary><div class="body"><div class="formula">Budget $10.0M   Actual $10.6M   Variance +$0.6M (6% favorable)
+Volume: +400 units × $1,000 = $0.4M
+Price:  higher price on existing units = $0.2M</div>
+  Revenue above budget is favorable; costs above budget are unfavorable. The value is in explaining why.</div></details>
+  <details><summary>Organic growth, with their numbers</summary><div class="body"><div class="formula">Q3 2026 reported growth           9%
+− acquisitions/divestitures       3%
+− currency                         0%
+= organic growth                   6%</div></div></details>
+  <details><summary>GAAP vs adjusted margin</summary><div class="body">Q3 2026 GAAP operating margin 18.6% vs adjusted 24.5%. The gap is mostly amortization of acquired intangibles and restructuring, typical for an acquisitive company.</div></details>
+  <details><summary>Earn-outs (the Clario structure)</summary><div class="body">An earn-out is extra purchase price paid only if the acquired business hits targets. Clario's deal includes up to $400M tied to 2026–2027 performance. Finance tracks whether targets are likely to be met and adjusts the "contingent consideration" liability; Thermo Fisher's Q3 results mention net credits from such changes.</div></details>
+  <details><summary>Free cash flow, EBITDA, working capital</summary><div class="body"><b>FCF</b> = operating cash flow − capex (2026 guidance: $7.0–7.5B). <b>EBITDA</b> = earnings before interest, taxes, depreciation, amortization. <b>Working capital</b> = receivables + inventory − payables; rising receivables tie up cash.</div></details>
+  <details><summary>Budget vs forecast vs actuals</summary><div class="body">Budget is set before the year; forecasts update during it; actuals are what happened. Thermo Fisher's raised guidance is a public forecast update.</div></details>
+</section>
+
+<!-- QUESTIONS -->
+<section id="questions">
+  <div class="eyebrow">07</div>
+  <h2>Question bank</h2>
+  <p class="lead">Questions marked <span style="color:var(--gold);font-weight:600">REPORTED</span> come from past Thermo Fisher FLDP candidates. Notes save in this browser.</p>
+  <div class="tabs" id="qtabs"></div>
+  <div id="qlist"></div>
+</section>
+
+<!-- ASK -->
+<section id="ask">
+  <div class="eyebrow">08</div>
+  <h2>Questions to ask Zack</h2>
+  <p class="lead">Pick three. The starred ones show research most candidates won't have done.</p>
+  <ol>
+    <li>★ "I read that interns present a final project to their team. What makes the strongest presentations stand out?"</li>
+    <li>★ "With Clario now part of Lab Products and Biopharma Services, are any intern projects connected to integration?"</li>
+    <li>"Which sites are placing 2027 finance interns, and how is placement decided?"</li>
+    <li>"What does the process look like after this call?"</li>
+    <li>★ "The program has CFO-level oversight. How involved are finance leaders with interns over the summer?"</li>
+    <li>"Is there flexibility around the May 31 start for student-athletes?"</li>
+  </ol>
+</section>
+
+<!-- PRACTICE -->
+<section id="practice">
+  <div class="eyebrow">09</div>
+  <h2>Flashcards &amp; drill</h2>
+  <h3>Fact flashcards (tap to flip)</h3>
+  <div class="flash">
+    <div class="fc" id="fc"><div class="face front" id="fcF"></div><div class="face back" id="fcB"></div></div>
+    <div class="btns"><button class="btn" id="fcPrev">← Prev</button><span id="fcN" style="align-self:center;color:var(--muted);font-size:14px"></span><button class="btn primary" id="fcNext">Next →</button></div>
+  </div>
+  <h3 style="margin-top:30px">Timed answer drill</h3>
+  <div class="card drill">
+    <div class="prompt" id="dQ">Press "New question"</div>
+    <div class="timer" id="dT">1:30</div>
+    <div class="btns"><button class="btn primary" id="dNew">New question</button><button class="btn" id="dGo">Start timer</button><button class="btn" id="dShow">Show my notes</button></div>
+    <div id="dNotes" style="margin-top:12px;color:var(--muted);text-align:left;white-space:pre-wrap"></div>
+  </div>
+</section>
+
+<!-- MEMORIZE -->
+<section id="memorize">
+  <div class="eyebrow">10</div>
+  <h2>How to memorize your answers</h2>
+  <p class="lead">Memorize the skeleton, not the script.</p>
+  <ol class="steps">
+    <li><b>Cut each story to four keywords</b>, one per STAR step, e.g. "slump · rebuilt mechanics · film with coach · ERA dropped."</li>
+    <li><b>Memorize only two lines word-for-word:</b> the opening sentence and the result.</li>
+    <li><b>Practice out loud.</b> Silent rehearsal takes half the time and hides rambling.</li>
+    <li><b>Active recall:</b> see only the question, answer aloud, then check notes. The drill shuffles so order can't help you.</li>
+    <li><b>Space it:</b> short sessions Saturday, Sunday and Monday morning beat one cram.</li>
+    <li><b>Record once per story</b> and cut filler and anything over two minutes.</li>
+    <li><b>Say it differently each time</b> so you can bend a story to an unexpected question.</li>
+    <li><b>Map five stories to every question</b> in the bank.</li>
+  </ol>
+  <div class="say"><b>On the call:</b> a one-page keyword sheet beside your laptop is fine. Glance, don't read.</div>
+</section>
+
+<!-- PLAN -->
+<section id="plan">
+  <div class="eyebrow">11</div>
+  <h2>Weekend plan</h2>
+  <p class="lead">Saturday evening through Monday morning. Checkboxes save in this browser.</p>
+  <div class="card" id="planBox">
+    <div class="day"><div class="when"><b>Saturday</b><span>Nov 7 · evening, ~75 min</span></div><div>
+      <div class="blk"><div class="t">Know it (35 min)</div>
+        <label class="check"><input type="checkbox" data-k="a1"><span>Read the cheat sheet and Insider intel; pick the two facts you'll use</span></label>
+        <label class="check"><input type="checkbox" data-k="a2"><span>Run the fact flashcards until you get every one</span></label>
+        <label class="check"><input type="checkbox" data-k="a3"><span>Check Zack on LinkedIn</span></label></div>
+      <div class="blk"><div class="t">Say it (40 min)</div>
+        <label class="check"><input type="checkbox" data-k="a4"><span>Write and record "Tell me about yourself" (60 sec) and "Why Thermo Fisher?"</span></label>
+        <label class="check"><input type="checkbox" data-k="a5"><span>Draft your 5 STAR stories as keywords in the question bank</span></label></div></div></div>
+    <div class="day"><div class="when"><b>Sunday</b><span>Nov 8 · ~90 min</span></div><div>
+      <div class="blk"><div class="t">Drill (40 min)</div>
+        <label class="check"><input type="checkbox" data-k="b1"><span>10 random drill questions, out loud, on the timer</span></label>
+        <label class="check"><input type="checkbox" data-k="b2"><span>Answer all the REPORTED questions at least once</span></label></div>
+      <div class="blk"><div class="t">Mock (30 min)</div>
+        <label class="check"><input type="checkbox" data-k="b3"><span>Full 30-minute mock with a friend, teammate or Claude</span></label>
+        <label class="check"><input type="checkbox" data-k="b4"><span>Tighten your weakest answer</span></label></div>
+      <div class="blk"><div class="t">Logistics (20 min)</div>
+        <label class="check"><input type="checkbox" data-k="b5"><span>Test Teams: camera at eye level, mic, lighting, plain background</span></label>
+        <label class="check"><input type="checkbox" data-k="b6"><span>Find the confirmation email; pick your three questions; make the keyword sheet</span></label>
+        <label class="check"><input type="checkbox" data-k="b7"><span>Early night, no new material</span></label></div></div></div>
+    <div class="day"><div class="when"><b>Monday</b><span>Nov 9 · call day</span></div><div>
+      <label class="check"><input type="checkbox" data-k="c1"><span>8:45: intro out loud once, skim keywords and your two intel facts</span></label>
+      <label class="check"><input type="checkbox" data-k="c2"><span>9:10: join from the confirmation link</span></label>
+      <label class="check"><input type="checkbox" data-k="c3"><span>Same day: thank-you email to Zack mentioning one thing you discussed</span></label></div></div>
+  </div>
+</section>
+
+<section id="sources">
+  <div class="eyebrow">Sources</div>
+  <ul class="sources">
+    <li><a href="https://www.sec.gov/Archives/edgar/data/0000097745/000009774526000173/q32026earnings8kex99_1.htm">Q3 2026 earnings release (SEC 8-K)</a></li>
+    <li><a href="https://www.sec.gov/Archives/edgar/data/0000097745/000009774526000179/tmo-20260926.htm">Q3 2026 Form 10-Q</a></li>
+    <li><a href="https://www.insiderfinance.io/news/thermo-fisher-q3-2026-results-raise-outlook">Raised 2026 outlook (InsiderFinance)</a></li>
+    <li><a href="https://www.marketbeat.com/instant-alerts/thermo-fisher-scientific-q4-earnings-call-highlights-2026-01-30/">Q4 2025 earnings call highlights (MarketBeat)</a></li>
+    <li><a href="https://www.businesswire.com/news/home/20260324226576/en/Thermo-Fisher-Scientific-Completes-Acquisition-of-Clario-Holdings-Inc">Clario acquisition completed (Business Wire)</a></li>
+    <li><a href="https://simplywall.st/stocks/us/pharmaceuticals-biotech/nyse-tmo/thermo-fisher-scientific/news/will-thermo-fishers-tmo-cfo-transition-shape-its-long-term-f/amp">CFO transition (Simply Wall St)</a></li>
+    <li><a href="https://www.glassdoor.com/Interview/Thermo-Fisher-Scientific-Finance-Leadership-Development-Program-Interview-Questions-EI_IE658.0,24_KO25,63.htm">FLDP interview reports (Glassdoor)</a></li>
+    <li><a href="https://econugblog.wordpress.com/2022/10/06/2023-finance-leadership-development-program-at-thermo-fisher-scientific/">2023 FLDP posting details</a></li>
+    <li><a href="https://careers.ncbiotech.org/companies/thermo-fisher-scientific/jobs/92516511-finance-intern">2027 Finance Intern posting</a></li>
+    <li><a href="https://biospectrumasia.com/company-results/29/28563/thermo-fisher-scientific-hits-12-14-billion-in-q3-revenue-as-innovation-fuels-double-digit-earnings-growth.html">Q3 2026 highlights (BioSpectrum)</a></li>
+  </ul>
+  <p class="sources">Compiled Nov 7, 2026.</p>
+</section>
+</main>
+</div>
+
+<script>
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const QS=[
+ {c:"Opening",q:"Tell me about yourself.",m:"60 sec: Columbia, Financial Economics + Applied Stats → D1 pitcher → why corporate finance → why this role."},
+ {c:"Opening",q:"Why Thermo Fisher?",m:"Mission + scale + PPI + one intel fact (CFO-sponsored FLDP or Clario)."},
+ {c:"Opening",q:"Why finance, and which rotation interests you?",m:"FP&A or Finance Data & Analytics; link to regression/R work."},
+ {c:"Opening",q:"Are you open to relocating for the internship?",m:"Clear yes."},
+ {c:"Reported",r:1,q:"Describe a time you were in a situation you had no prior training or preparation for.",m:"Adaptability · first collegiate start, new pitch, new role, or first coding project."},
+ {c:"Reported",r:1,q:"Describe a positive interaction with a mentor.",m:"Coach or professor · what they taught you and how you used it."},
+ {c:"Reported",r:1,q:"Describe a time you did something new to achieve a goal.",m:"Initiative · e.g. building your GitHub study sites to master a course."},
+ {c:"Reported",r:1,q:"Tell me about a time you failed and what you learned.",m:"Grit · a tough outing or slump; spend most time on what changed."},
+ {c:"Leadership",q:"Tell me about a time you led a group.",m:"Pitching staff, team role, or group project."},
+ {c:"Leadership",q:"Tell me about a time you influenced someone without authority.",m:"Teammate or classmate; how you persuaded."},
+ {c:"Leadership",q:"How do you balance D1 athletics with a heavy course load?",m:"Priorities · a specific in-season week with exams."},
+ {c:"Teamwork",q:"Tell me about working with someone difficult.",m:"Stay neutral about them; focus on your actions."},
+ {c:"Teamwork",q:"Describe a time you adapted to a sudden change.",m:"Lineup change, schedule shift, injury."},
+ {c:"Analytical",q:"Describe a time you solved a problem with data.",m:"R or regression project; the question, the method, the answer."},
+ {c:"Analytical",q:"Tell me about a time you found an error or something others missed.",m:"Detail orientation · data cleaning, a homework or analysis catch."},
+ {c:"Closing",q:"What are you looking for in a summer internship?",m:"Real project ownership, mentorship, path to the FLDP."},
+ {c:"Closing",q:"Where do you see yourself in five years?",m:"FLDP → a finance leadership track in FP&A or analytics."},
+ {c:"Closing",q:"Do you have any questions for me?",m:"Always yes. Use section 08."}
+];
+const cats=["All",...new Set(QS.map(x=>x.c))];
+const tabs=document.getElementById('qtabs'), list=document.getElementById('qlist');
+cats.forEach((c,i)=>{const b=document.createElement('button');b.textContent=c;if(!i)b.classList.add('on');b.onclick=()=>{tabs.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');render(c)};tabs.appendChild(b)});
+function render(c){
+  list.innerHTML='';
+  QS.forEach((o,i)=>{ if(c!=="All"&&o.c!==c)return;
+    const d=document.createElement('div');d.className='q';
+    d.innerHTML=`${o.r?'<div class="src">REPORTED BY PAST CANDIDATES</div>':''}<div class="qt">${o.q}</div><div class="meta">${o.m}</div><textarea placeholder="Your 4 keywords (S · T · A · R)…"></textarea>`;
+    const ta=d.querySelector('textarea');ta.value=store.get('v2q'+i)||'';ta.oninput=()=>store.set('v2q'+i,ta.value);
+    list.appendChild(d);});
+}
+render("All");
+
+const FC=[
+ ["Thermo Fisher's mission","Enable customers to make the world healthier, cleaner and safer"],
+ ["The 4i values","Integrity, Intensity, Innovation, Involvement"],
+ ["The four segments","Lab Products & Biopharma Services · Life Sciences Solutions · Analytical Instruments · Specialty Diagnostics"],
+ ["Largest, fastest-growing segment in Q3 2026","Lab Products & Biopharma Services: $6.86B, +15%"],
+ ["Q3 2026 revenue and growth","$12.14B, +9% reported, +6% organic"],
+ ["Raised 2026 guidance","$47.7–48.2B revenue; $25.13–25.43 adjusted EPS"],
+ ["CEO","Marc N. Casper, chairman and CEO"],
+ ["Current CFO","Jim Meyer, since spring 2026; 17 years at the company"],
+ ["Clario","Clinical-trial endpoint data; closed Mar 2026 for $8.875B + up to $400M earn-outs; joined LPBS"],
+ ["PPI","Practical Process Improvement, Thermo Fisher's business system"],
+ ["Recent divestiture","Microbiology business, completed Q3 2026"],
+ ["Internship dates","Starts May 31, 2027; 10 weeks"],
+ ["How interns reach the FLDP","Present a final project, get evaluated; favorable reviews lead to an FLDP interview"]
+];
+let fi=0;const fc=document.getElementById('fc');
+function showFC(){fc.classList.remove('flip');document.getElementById('fcF').textContent=FC[fi][0];document.getElementById('fcB').textContent=FC[fi][1];document.getElementById('fcN').textContent=(fi+1)+' / '+FC.length}
+fc.onclick=()=>fc.classList.toggle('flip');
+document.getElementById('fcNext').onclick=()=>{fi=(fi+1)%FC.length;showFC()};
+document.getElementById('fcPrev').onclick=()=>{fi=(fi-1+FC.length)%FC.length;showFC()};
+showFC();
+
+let cur=-1,left=90,iv=null,order=[];
+const dT=document.getElementById('dT');
+const fmt=s=>{const a=Math.abs(s);return(s<0?'+':'')+Math.floor(a/60)+':'+String(a%60).padStart(2,'0')};
+function reset(){clearInterval(iv);iv=null;left=90;dT.textContent=fmt(left);dT.classList.remove('over');document.getElementById('dGo').textContent='Start timer'}
+document.getElementById('dNew').onclick=()=>{if(!order.length)order=[...QS.keys()].sort(()=>Math.random()-.5);cur=order.pop();document.getElementById('dQ').textContent=QS[cur].q;document.getElementById('dNotes').textContent='';reset()};
+document.getElementById('dGo').onclick=e=>{if(iv){reset();return}e.target.textContent='Stop';iv=setInterval(()=>{left--;dT.textContent=fmt(left);if(left<0)dT.classList.add('over')},1000)};
+document.getElementById('dShow').onclick=()=>{if(cur<0)return;document.getElementById('dNotes').textContent=store.get('v2q'+cur)||('No notes yet. Hint: '+QS[cur].m)};
+
+document.querySelectorAll('#planBox input').forEach(cb=>{cb.checked=store.get('v2c'+cb.dataset.k)==='1';cb.onchange=()=>store.set('v2c'+cb.dataset.k,cb.checked?'1':'0')});
+
+function cd(){const ms=new Date('2026-11-09T09:15:00-05:00')-new Date(),el=document.getElementById('cd');if(ms<=0){el.textContent='Today';return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);el.textContent=d?`${d}d ${h}h`:`${h}h ${m}m`}
+cd();setInterval(cd,60000);
+
+const root=document.documentElement,t=store.get('v2theme');if(t)root.dataset.theme=t;
+document.getElementById('themeBtn').onclick=()=>{const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;root.dataset.theme=dark?'light':'dark';store.set('v2theme',root.dataset.theme)};
+
+const links=[...document.querySelectorAll('#nav a')];
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('main section[id]').forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>

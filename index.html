@@ -79,6 +79,7 @@ details .body{padding:0 16px 14px 34px}
 .q .src{font-size:12px;color:var(--gold);font-weight:600}
 .q .meta{font-size:14px;color:var(--muted);margin:4px 0 10px}
 .q textarea{width:100%;min-height:70px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:14px/1.5 Inter,sans-serif;padding:8px 10px;resize:vertical}
+.ypane{margin-top:6px}
 .flash{perspective:1200px;max-width:560px;margin:0 auto}
 .fc{position:relative;height:210px;cursor:pointer;transition:transform .5s;transform-style:preserve-3d}
 .fc.flip{transform:rotateY(180deg)}
@@ -124,6 +125,7 @@ details .body{padding:0 16px 14px 34px}
   <div class="cd">Recruiter screen in<b id="cd">—</b>Mon Nov 9 · 9:15 AM ET</div>
   <nav id="nav">
     <a href="#brief"><span>00</span>Cheat sheet</a>
+    <a href="#you"><span>★</span>Your story</a>
     <a href="#intel"><span>01</span>Insider intel</a>
     <a href="#company"><span>02</span>Company basics</a>
     <a href="#process"><span>03</span>Interview process</a>
@@ -141,7 +143,7 @@ details .body{padding:0 16px 14px 34px}
 
 <main>
 <div class="mtop">
-  <a href="#brief">Cheat sheet</a><a href="#intel">Intel</a><a href="#company">Company</a><a href="#process">Process</a><a href="#program">FLDP</a><a href="#people">People</a><a href="#fpa">FP&amp;A</a><a href="#questions">Questions</a><a href="#ask">Ask</a><a href="#practice">Drill</a><a href="#memorize">Memorize</a><a href="#plan">Plan</a>
+  <a href="#brief">Cheat sheet</a><a href="#you">Your story</a><a href="#intel">Intel</a><a href="#company">Company</a><a href="#process">Process</a><a href="#program">FLDP</a><a href="#people">People</a><a href="#fpa">FP&amp;A</a><a href="#questions">Questions</a><a href="#ask">Ask</a><a href="#practice">Drill</a><a href="#memorize">Memorize</a><a href="#plan">Plan</a>
 </div>
 
 <!-- CHEAT SHEET -->
@@ -164,6 +166,139 @@ details .body{padding:0 16px 14px 34px}
       <tr><td>Which rotation?</td><td>FP&amp;A or Finance Data &amp; Analytics; ties to your Applied Stats minor and R.</td></tr>
       <tr><td>Relocate?</td><td>"Yes, I'm open to any site."</td></tr>
     </table>
+  </div>
+</section>
+
+<!-- YOUR STORY -->
+<section id="you">
+  <div class="eyebrow">★ Your story</div>
+  <h2>Talking through your resume</h2>
+  <p class="lead">Built only from what's on your resume. Lines in <span style="color:var(--gold);font-weight:600">[brackets]</span> are details only you know; fill them in before you practice.</p>
+
+  <div class="say"><b>The thread that ties it together:</b> every project on your resume is about <i>comparing numbers fairly and explaining why they differ</i>. The GOAT Project normalizes across eras; the Kalshi project compares two forecasts. That's exactly what FP&amp;A does: forecast, compare to actuals, and explain the variance. Say this once and the recruiter will remember you.</div>
+
+  <div class="tabs" id="ytabs">
+    <button class="on" data-p="p-walk">Resume walkthrough</button>
+    <button data-p="p-goat">GOAT Project</button>
+    <button data-p="p-kalshi">Prediction markets</button>
+    <button data-p="p-beh">Basic behavioral</button>
+    <button data-p="p-map">Story map</button>
+  </div>
+
+  <!-- WALKTHROUGH -->
+  <div class="ypane" id="p-walk">
+    <h3>"Walk me through your resume" · about 2 minutes</h3>
+    <p style="color:var(--muted);margin-top:0">Go top to bottom, but spend time where it matters for finance: projects and the athlete-plus-academics balance.</p>
+    <div class="card">
+      <ol class="steps">
+        <li><b>Who you are (15 sec).</b> "I'm a junior at Columbia studying Financial Economics with a minor in Applied Statistics, and I'm a starting pitcher on the Division I softball team."</li>
+        <li><b>Why finance (15 sec).</b> "I got into finance through my dad, who's always talking about where and how to invest. Those little lessons growing up made me want to understand how money actually drives decisions, and my coursework, like Accounting &amp; Finance and Econometrics, turned that into real tools."</li>
+        <li><b>Softball (25 sec).</b> "Softball is 30-plus hours a week in season. I've gone 7–5 over 67 innings in the Ivy League, and I've kept Dean's List and All-America Scholar-Athlete honors alongside it. It's where I learned to manage time and perform under pressure. I also helped raise $40,000 for the program through donor outreach: cold calls, social content, and keeping donor information organized."</li>
+        <li><b>Projects (45 sec).</b> "Outside class I've built two analytics projects in R. This summer I did the GOAT Project: I built a metric to compare 100-meter sprinters across 50 years by adjusting for how strong each era's field was, and presented it to faculty in Athens. Right now I'm comparing NFL sportsbook odds with Kalshi prediction-market prices to see which one forecasts more accurately and why they disagree."</li>
+        <li><b>Experience (10 sec).</b> "Before that, I built weekly Excel performance reports for over 100 campers at a summer sports camp so coaches could spot standout athletes quickly."</li>
+        <li><b>Why here (10 sec).</b> "What connects all of it is forecasting and explaining differences in numbers, which is why FP&amp;A and the FLDP at Thermo Fisher stand out to me."</li>
+      </ol>
+    </div>
+    <div class="warn"><b>Watch for:</b> don't read bullet points aloud. Each line above is a talking point; say it in your own words.</div>
+  </div>
+
+  <!-- GOAT -->
+  <div class="ypane" id="p-goat" hidden>
+    <h3>30-second version (for the recruiter)</h3>
+    <div class="say">"I wanted to settle who the greatest 100-meter sprinter is, but you can't just compare times because the sport changed so much over 50 years. So I measured dominance instead: how many standard deviations each runner beat the rest of the final by. That puts every era on the same scale. Usain Bolt came out on top, more than five standard deviations ahead of his fields. I presented it to faculty in Athens, and it's published on my GitHub."</div>
+
+    <h3>The metric, in plain English</h3>
+    <div class="formula">dominance = (runner's time − average time of the other finalists) / SD of the other finalists</div>
+    <ul>
+      <li><b>Why not raw times?</b> Track surfaces, shoes and timing technology improved, so a 10.0 in 1972 and a 10.0 in 2016 don't mean the same thing.</li>
+      <li><b>Why standard deviations?</b> It measures how far ahead you were of the people you actually raced, in units that work for any year. Same idea as a z-score.</li>
+      <li><b>Why "the other finalists"?</b> Each runner is compared against everyone else in the race, leaving themselves out, so a dominant winner doesn't drag the average toward their own time.</li>
+    </ul>
+
+    <h3>Explaining the code (if they ask "how did you build it?")</h3>
+    <div class="card">
+      <ol class="steps">
+        <li><b>Data.</b> "I started from a public World Athletics database on GitHub, about 25,000 men's 100m results, and loaded it into R."</li>
+        <li><b>Cleaning.</b> "Results didn't come labeled by race, so I parsed a position code to work out round, heat and place, and built a race ID from venue, date and round. Rows I couldn't assign to a race I dropped and documented."</li>
+        <li><b>Fixing gaps.</b> "The database only lists times of 10.30 or faster, so older finals were missing their slowest runners. That would have made old fields look stronger than they were, so I hand-entered the missing finalists from official results, with a source for every row."</li>
+        <li><b>Scoring.</b> "I scored every finalist against the others, then ranked runners two ways: best single race and career average."</li>
+        <li><b>Judgment calls.</b> "I logged every assumption, like keeping doping-annulled races but flagging them, and excluding injured runners from field statistics, then tested how the rankings changed."</li>
+        <li><b>Output.</b> "Charts in ggplot2, some interactive, in a Quarto report on GitHub Pages."</li>
+      </ol>
+    </div>
+
+    <h3>Likely follow-ups</h3>
+    <details><summary>"What was the hardest part?"</summary><div class="body">The missing data. Spotting that the database cut off slower times, and realizing that would bias older fields, mattered more than any code. Say this; it shows judgment.</div></details>
+    <details><summary>"How does this relate to finance?"</summary><div class="body">"It's the same problem as comparing performance across years in a business. Thermo Fisher reports organic growth to strip out acquisitions and currency so you see the real underlying performance. I was stripping out era effects to see real dominance."</div></details>
+    <details><summary>"What would you do differently?"</summary><div class="body">[Your honest answer.] Options: add more championships or other events, or test the metric's sensitivity with fewer assumptions.</div></details>
+    <details><summary>"Why did you document every assumption?"</summary><div class="body">"Because someone reviewing my work should be able to see every judgment call and disagree with it. That's how I'd want to work on a finance team too."</div></details>
+  </div>
+
+  <!-- KALSHI -->
+  <div class="ypane" id="p-kalshi" hidden>
+    <h3>Why you're interested · 30 seconds</h3>
+    <div class="say">"Prediction markets fascinate me because they turn opinions into prices. On Kalshi, a contract pays a dollar if something happens, so a price of 60 cents is basically the market saying there's a 60% chance. Sportsbooks set odds on the same games, so I'm comparing the two to see which forecasts NFL outcomes better and whether either one systematically misprices favorites and longshots. I'm also taking a Prediction Markets course this spring."</div>
+
+    <h3>Key ideas to explain simply</h3>
+    <details><summary>Price = probability</summary><div class="body">A Kalshi contract trades between $0 and $1 and pays $1 if the event happens. The price is the crowd's implied probability. Sportsbook odds can be converted to an implied probability too.</div></details>
+    <details><summary>The sportsbook's cut ("vig")</summary><div class="body">Sportsbook probabilities for both sides add up to more than 100%; the extra is the book's margin. To compare fairly with Kalshi, you remove that margin first. [Say only if this is a step in your project.]</div></details>
+    <details><summary>Favorite-longshot bias</summary><div class="body">A well-documented pattern where bettors overpay for longshots, so longshots win less often than their prices imply and favorites win slightly more. You're testing whether sportsbooks, Kalshi, or both show it.</div></details>
+    <details><summary>Your regression</summary><div class="body">"I'm building a price-gap test in R: the outcome is the difference between the two markets' implied probabilities, and the inputs are game factors, so I can see what drives the disagreement." [Name the factors you're actually testing.]</div></details>
+
+    <h3>Being honest that it's ongoing</h3>
+    <p>It's fine that you don't have results yet. Say: <i>"It's ongoing; right now I'm [building the dataset / running the first regressions]. What I'm most curious about is [your hypothesis]."</i> Never guess at findings you don't have.</p>
+
+    <h3>Connecting it to Thermo Fisher</h3>
+    <div class="say">"Both markets are forecasts, and I'm measuring which forecast is better and explaining why they disagree. That's really what FP&amp;A does: build forecasts, compare them with what actually happened, and explain the variance."</div>
+    <div class="warn"><b>Framing tip:</b> call it "prediction markets" and "forecasting," and talk about the data, not betting. It keeps the focus on the analysis.</div>
+  </div>
+
+  <!-- BEHAVIORAL -->
+  <div class="ypane" id="p-beh" hidden>
+    <p style="color:var(--muted);margin-top:0">Sample STAR answers from your resume. Make each your own and keep it under 2 minutes.</p>
+
+    <details open><summary>"How do you manage your time?"</summary><div class="body">
+      <b>S:</b> In season, softball takes 30+ hours a week with training and travel. <b>T:</b> I still had to keep up with quantitative courses like Econometrics. <b>A:</b> [Your system: planning around travel, studying on the road, talking to professors early about conflicts.] <b>R:</b> Dean's List and NFCA All-America Scholar-Athlete honors in both 2025 and 2026.</div></details>
+
+    <details><summary>"Tell me about a time you took initiative / did something new to reach a goal."</summary><div class="body">
+      <b>S:</b> Our program needed donor support. <b>T:</b> Help raise money as part of team outreach. <b>A:</b> I created TikTok and Instagram content, made cold calls to prospective donors, and managed donor information. [Add one call or post that stood out.] <b>R:</b> The team raised $40,000.</div></details>
+
+    <details><summary>"Describe a time you had no prior training for something." (reported)</summary><div class="body">
+      Two good options: <b>cold-calling donors</b> (no sales training, learned on the phone), or <b>the GOAT Project</b> (built your first full research project from scratch and presented it to faculty in Athens). Pick one; the A should show how you learned quickly.</div></details>
+
+    <details><summary>"Tell me about a time you failed or faced a setback." (reported)</summary><div class="body">
+      Use a real tough outing or stretch from your pitching. <b>S/T:</b> [the game or slump]. <b>A:</b> [what you changed: film, mechanics, mindset, working with coaches]. <b>R:</b> [the next outing or season]. Spend most of the time on what you changed; that's what they're grading.</div></details>
+
+    <details><summary>"Describe a positive interaction with a mentor." (reported)</summary><div class="body">
+      A coach or professor who changed how you work. [Who, the specific advice, and how you applied it in a game, a class or a project.]</div></details>
+
+    <details><summary>"Tell me about a time you had to adapt quickly."</summary><div class="body">
+      <b>S:</b> Running a summer camp schedule for 100+ campers. <b>T:</b> Keep the day structured. <b>A:</b> [A specific day the plan broke: weather, missing staff, an activity running long] and how you adjusted on the fly. <b>R:</b> The day ran smoothly; kids stayed safe and engaged.</div></details>
+
+    <details><summary>"Describe a time you used data to help someone decide."</summary><div class="body">
+      <b>S:</b> Camp coaches needed to know which of 100+ campers stood out. <b>T:</b> Make performance easy to see. <b>A:</b> Built weekly Excel reports that flagged standout athletes. <b>R:</b> Coaches spotted talent faster and spent less time on admin.</div></details>
+
+    <details><summary>"What's your greatest strength?"</summary><div class="body">"Balancing high-pressure commitments. Pitching taught me to stay calm with the game on the line, and doing it next to a quant-heavy major taught me to plan carefully." Back it with Dean's List + 30 hours a week.</div></details>
+
+    <details><summary>"What's a weakness?"</summary><div class="body">Pick something real and show the fix. One honest option from your resume: "My Python is still basic. I'm strongest in R, so I've been building Python skills by working on it alongside my R projects." [Or another real one.]</div></details>
+
+    <details><summary>"Why should we hire you?"</summary><div class="body">"I bring three things: quantitative tools from Financial Economics and Applied Statistics, projects that show I can work through messy data and explain my assumptions, and the discipline of a D1 athlete balancing 30 hours a week with Dean's List grades."</div></details>
+  </div>
+
+  <!-- MAP -->
+  <div class="ypane" id="p-map" hidden>
+    <p style="color:var(--muted);margin-top:0">Five stories cover nearly every question. Know which one you'd pull for each.</p>
+    <div class="card tw">
+      <table>
+        <tr><th>Story</th><th>Use it for</th><th>Proof point</th></tr>
+        <tr><td><b>Softball balance</b></td><td>Time management, pressure, strength, discipline</td><td>30+ hrs/week, Dean's List, Scholar-Athlete ×2</td></tr>
+        <tr><td><b>A pitching setback</b></td><td>Failure, resilience, feedback, mentor</td><td>[your outing]; 7–5, Rookie of the Week</td></tr>
+        <tr><td><b>Donor outreach</b></td><td>Initiative, no training, teamwork, communication</td><td>$40,000 raised; cold calls, social content</td></tr>
+        <tr><td><b>GOAT Project</b></td><td>Data problem, attention to detail, something new, presenting</td><td>50+ years of finals; presented in Athens</td></tr>
+        <tr><td><b>Summer camp</b></td><td>Adaptability, leading groups, using data for decisions</td><td>Excel reports for 100+ campers</td></tr>
+        <tr><td><b>Kalshi project</b></td><td>Curiosity, why finance/forecasting, current work</td><td>Regression in R; ongoing</td></tr>
+      </table>
+    </div>
   </div>
 </section>
 
@@ -390,7 +525,8 @@ Price:  higher price on existing units = $0.2M</div>
       <div class="blk"><div class="t">Know it (35 min)</div>
         <label class="check"><input type="checkbox" data-k="a1"><span>Read the cheat sheet and Insider intel; pick the two facts you'll use</span></label>
         <label class="check"><input type="checkbox" data-k="a2"><span>Run the fact flashcards until you get every one</span></label>
-        <label class="check"><input type="checkbox" data-k="a3"><span>Check Zack on LinkedIn</span></label></div>
+        <label class="check"><input type="checkbox" data-k="a3"><span>Check Zack on LinkedIn</span></label>
+        <label class="check"><input type="checkbox" data-k="a6"><span>Fill in every [bracket] in Your story; say the resume walkthrough and GOAT 30-second version out loud</span></label></div>
       <div class="blk"><div class="t">Say it (40 min)</div>
         <label class="check"><input type="checkbox" data-k="a4"><span>Write and record "Tell me about yourself" (60 sec) and "Why Thermo Fisher?"</span></label>
         <label class="check"><input type="checkbox" data-k="a5"><span>Draft your 5 STAR stories as keywords in the question bank</span></label></div></div></div>
@@ -434,20 +570,23 @@ Price:  higher price on existing units = $0.2M</div>
 <script>
 const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
 const QS=[
- {c:"Opening",q:"Tell me about yourself.",m:"60 sec: Columbia, Financial Economics + Applied Stats → D1 pitcher → why corporate finance → why this role."},
+ {c:"Opening",q:"Tell me about yourself.",m:"See Your story → Resume walkthrough. Columbia → dad sparked finance → softball → two R projects → why FP&A."},
  {c:"Opening",q:"Why Thermo Fisher?",m:"Mission + scale + PPI + one intel fact (CFO-sponsored FLDP or Clario)."},
  {c:"Opening",q:"Why finance, and which rotation interests you?",m:"FP&A or Finance Data & Analytics; link to regression/R work."},
  {c:"Opening",q:"Are you open to relocating for the internship?",m:"Clear yes."},
- {c:"Reported",r:1,q:"Describe a time you were in a situation you had no prior training or preparation for.",m:"Adaptability · first collegiate start, new pitch, new role, or first coding project."},
- {c:"Reported",r:1,q:"Describe a positive interaction with a mentor.",m:"Coach or professor · what they taught you and how you used it."},
- {c:"Reported",r:1,q:"Describe a time you did something new to achieve a goal.",m:"Initiative · e.g. building your GitHub study sites to master a course."},
- {c:"Reported",r:1,q:"Tell me about a time you failed and what you learned.",m:"Grit · a tough outing or slump; spend most time on what changed."},
+ {c:"Reported",r:1,q:"Describe a time you were in a situation you had no prior training or preparation for.",m:"Your story: cold-calling donors with no training, or building the GOAT Project from scratch."},
+ {c:"Reported",r:1,q:"Describe a positive interaction with a mentor.",m:"Your story: a coach or professor; the advice and how you applied it."},
+ {c:"Reported",r:1,q:"Describe a time you did something new to achieve a goal.",m:"Your story: donor outreach ($40K raised) or the GOAT Project."},
+ {c:"Reported",r:1,q:"Tell me about a time you failed and what you learned.",m:"Your story: a real tough outing; most of the answer is what you changed."},
  {c:"Leadership",q:"Tell me about a time you led a group.",m:"Pitching staff, team role, or group project."},
  {c:"Leadership",q:"Tell me about a time you influenced someone without authority.",m:"Teammate or classmate; how you persuaded."},
- {c:"Leadership",q:"How do you balance D1 athletics with a heavy course load?",m:"Priorities · a specific in-season week with exams."},
+ {c:"Leadership",q:"How do you balance D1 athletics with a heavy course load?",m:"Your story: 30+ hrs/week in season + Dean's List + Scholar-Athlete ×2."},
  {c:"Teamwork",q:"Tell me about working with someone difficult.",m:"Stay neutral about them; focus on your actions."},
- {c:"Teamwork",q:"Describe a time you adapted to a sudden change.",m:"Lineup change, schedule shift, injury."},
- {c:"Analytical",q:"Describe a time you solved a problem with data.",m:"R or regression project; the question, the method, the answer."},
+ {c:"Teamwork",q:"Describe a time you adapted to a sudden change.",m:"Your story: adjusting the camp schedule on the fly."},
+ {c:"Analytical",q:"Describe a time you solved a problem with data.",m:"Your story: GOAT Project (missing-data fix) or camp Excel reports."},
+ {c:"Your projects",q:"Walk me through the GOAT Project.",m:"30-sec version in Your story; lead with the problem, then the metric, then Bolt."},
+ {c:"Your projects",q:"Tell me about your prediction markets project.",m:"Price = probability; comparing two forecasts; honest that it's ongoing; tie to FP&A."},
+ {c:"Your projects",q:"Walk me through your resume.",m:"Two minutes; see Your story → Resume walkthrough."},
  {c:"Analytical",q:"Tell me about a time you found an error or something others missed.",m:"Detail orientation · data cleaning, a homework or analysis catch."},
  {c:"Closing",q:"What are you looking for in a summer internship?",m:"Real project ownership, mentorship, path to the FLDP."},
  {c:"Closing",q:"Where do you see yourself in five years?",m:"FLDP → a finance leadership track in FP&A or analytics."},
@@ -496,6 +635,7 @@ document.getElementById('dNew').onclick=()=>{if(!order.length)order=[...QS.keys(
 document.getElementById('dGo').onclick=e=>{if(iv){reset();return}e.target.textContent='Stop';iv=setInterval(()=>{left--;dT.textContent=fmt(left);if(left<0)dT.classList.add('over')},1000)};
 document.getElementById('dShow').onclick=()=>{if(cur<0)return;document.getElementById('dNotes').textContent=store.get('v2q'+cur)||('No notes yet. Hint: '+QS[cur].m)};
 
+document.querySelectorAll('#ytabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#ytabs button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.ypane').forEach(p=>p.hidden=p.id!==b.dataset.p)});
 document.querySelectorAll('#planBox input').forEach(cb=>{cb.checked=store.get('v2c'+cb.dataset.k)==='1';cb.onchange=()=>store.set('v2c'+cb.dataset.k,cb.checked?'1':'0')});
 
 function cd(){const ms=new Date('2026-11-09T09:15:00-05:00')-new Date(),el=document.getElementById('cd');if(ms<=0){el.textContent='Today';return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);el.textContent=d?`${d}d ${h}h`:`${h}h ${m}m`}
